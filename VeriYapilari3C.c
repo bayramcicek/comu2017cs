@@ -1,16 +1,6 @@
-/* 
- * File:   main.c
- * Author: BM
- *
- * Created on 01 Ekim 2014 Çarşamba, 12:59
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
 
 struct hucre{
     int icerik;
@@ -193,4 +183,3 @@ int main(int argc, char** argv) {
     
     return (EXIT_SUCCESS);
 }
-
