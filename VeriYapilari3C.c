@@ -48,6 +48,7 @@ void liste_yaz(struct hucre *liste_basi){
     printf("\n");
 }
 
+
 void liste_yaz_recursive(struct hucre *liste_basi){
     if(liste_basi!=NULL) {
     printf("%4d ",liste_basi->icerik);
