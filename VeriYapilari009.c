@@ -37,7 +37,7 @@ struct node *rightRotate(struct node *y){
 } // sol sol
 
 struct node *leftRotate(struct node *x){
-    struct node *y=x->right, *T=y->left;
+    struct node *y=x->right, *T=y->left; 
     y->left=x;
     x->right = T;
     
