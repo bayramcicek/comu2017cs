@@ -9,14 +9,14 @@ struct CELL {
     struct CELL *next;
 };
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 int lookup(char *anahtar, struct CELL *l){
     if(l==NULL) return 0;
     else if(!strcmp(anahtar,l->anahtar)) return 1;
     else return lookup(anahtar,l->next);
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 int insert(char *anahtar, struct CELL **l){
     if(*l==NULL){
@@ -31,7 +31,7 @@ int insert(char *anahtar, struct CELL **l){
     else return 0;
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void print_list(struct CELL *l){
     if(l!=NULL){
@@ -41,14 +41,14 @@ void print_list(struct CELL *l){
     
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 struct table_node{
     int counter;
     struct CELL *header;
 };
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 struct hash_tablosu{
     struct table_node *tablo_basi;
@@ -56,7 +56,7 @@ struct hash_tablosu{
     int multiplier;
 };
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 unsigned hash(char *anahtar, int multiplier, int table_size){
     int i=0;
@@ -68,7 +68,7 @@ unsigned hash(char *anahtar, int multiplier, int table_size){
     return value;
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void initialize_hash_table(struct hash_tablosu **hash_table,int multiplier, int table_size){
     int i;
@@ -91,7 +91,7 @@ void initialize_hash_table(struct hash_tablosu **hash_table,int multiplier, int 
     }
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void insert_hash_table(struct hash_tablosu *hash_table,char *anahtar){
     int hash_index = hash(anahtar, hash_table->multiplier,
@@ -100,7 +100,7 @@ void insert_hash_table(struct hash_tablosu *hash_table,char *anahtar){
      (hash_table->tablo_basi +hash_index)->counter++;
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void print_hash_table(struct hash_tablosu *hash_table){
     if(hash_table){
@@ -115,7 +115,7 @@ void print_hash_table(struct hash_tablosu *hash_table){
     else printf("Hash Tablosu Bos ...\n");  
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 int delete_dugum_liste(struct CELL **header,char *anahtar){
     struct CELL *simdiki,*onceki;
@@ -135,7 +135,7 @@ int delete_dugum_liste(struct CELL **header,char *anahtar){
     return 1;
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void delete_hash_table(struct hash_tablosu *table, char *anahtar){
     int hash_index= hash(anahtar,table->multiplier, table->tablo_uzunlugu);
@@ -143,7 +143,7 @@ void delete_hash_table(struct hash_tablosu *table, char *anahtar){
     (table->tablo_basi+hash_index)->counter--; 
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void liste_yok_et(struct CELL **liste_basi){
     struct CELL *onceki;
@@ -155,7 +155,7 @@ void liste_yok_et(struct CELL **liste_basi){
     }
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void hash_table_yok_et(struct hash_tablosu **hash_table){
     int index;
@@ -168,7 +168,7 @@ void hash_table_yok_et(struct hash_tablosu **hash_table){
     *hash_table=NULL;  
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 void hash_table_buyut(struct hash_tablosu **htable,int multiplier, int tablo_uzunlugu){
     int i;
@@ -189,15 +189,15 @@ void hash_table_buyut(struct hash_tablosu **htable,int multiplier, int tablo_uzu
     }   
 }
 
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
 
 int aynimi(struct hash_tablosu *h1, struct hash_tablosu *h2){
         // ödev
 }
 
-<--------------------------------------------------------------------------->
-<-------------------------------------main---------------------------------->
-<--------------------------------------------------------------------------->
+//---------------------------------------------------------------------------//
+//-------------------------------------main----------------------------------//
+//---------------------------------------------------------------------------//
 
 int main(int argc, char** argv) {
     struct hash_tablosu *htable=NULL;
