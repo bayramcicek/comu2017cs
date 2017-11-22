@@ -1,4 +1,4 @@
-(1 soru) --> AVL Tree 
+(1 soru) --> AVL Tree  
 (1 soru) --> İkili arama ağacı
 (1 soru) --> Dinamik bellek tahsisi
 (1 soru) --> Tek yönlü bağlantılı liste
