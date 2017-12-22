@@ -1,2 +1,1 @@
-## Güncel
-#### Hash tablo ppt dosyaları ve kodları eklendi
+# Tüm kodlar eklendi...
